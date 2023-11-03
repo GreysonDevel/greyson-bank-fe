@@ -1,0 +1,43 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": 6
+        }
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "react-refresh/babel",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "@components": "./src/components",
+          "@intl": "./src/i18n",
+          "@pages": "./src/pages",
+          "@utils": "./src/utils"
+        }
+      }
+    ],
+    [
+      "emotion",
+      {
+        // sourceMap is on by default but source maps are dead code eliminated in production
+        "sourceMap": true,
+        "labelFormat": "[local]",
+        "cssPropOptimization": true
+      }
+    ],
+    [
+      "ramda"
+    ]
+  ]
+}
